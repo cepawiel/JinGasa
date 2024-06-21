@@ -127,8 +127,8 @@ BSC_BCR1_DATA:                           !    Bios:    0xA3020008
     .long        0xA3020008
 BSC_BCR2_ADDR:                           ! Bus control register 2:
     .long        0xFF800004              !    Initial: 0x3FFC
-BSC_BCR2_DATA:                           !    Bios:    0x00000000
-    .long        0x00000000
+BSC_BCR2_DATA:                           !    Bios:    0x00000001
+    .long        0x00000001              !      Set PORTEN=1 to enable PIO
 
 BSC_WCR1_ADDR:                           ! Wait state control register 1:
     .long        0xFF800008              !    Initial: 0x77777777
@@ -175,7 +175,8 @@ BSC_SDMR3_DATA:                          !
 GPIO_PCTRA_ADDR:                         ! Port control register A:
     .long        0xFF80002C              !    Initial: 0x00000000
 GPIO_PCTRA_DATA:                         !    Bios:    0x000A03F0           System SP: 0x000fef30 ?
-    .long        0x000fef30              ! or 0efe         
+    .long        0x000A03F0
+!   .long        0x000fef30              ! or 0efe    
 !   .long        0x000feffe
 
 GPIO_PCTRB_ADDR:                         ! Port control register B:
